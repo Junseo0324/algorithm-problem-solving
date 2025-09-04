@@ -21,6 +21,5 @@ fun solution12912(a: Int, b: Int): Long {
 
 
 fun main() {
-
     println(solution12912(3,3))
 }
