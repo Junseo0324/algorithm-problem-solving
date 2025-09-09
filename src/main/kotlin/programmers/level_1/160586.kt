@@ -1,7 +1,5 @@
 package programmers.level_1
 
-import kotlin.math.max
-
 // https://school.programmers.co.kr/learn/courses/30/lessons/160586
 
 fun solution160586(keymap: Array<String>, targets: Array<String>): IntArray {
