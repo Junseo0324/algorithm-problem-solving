@@ -11,10 +11,26 @@ fun solution131701(elements: IntArray): Int {
     val set = mutableSetOf<Int>()
     val size = elements.size
 
+    //부분 합 이용 방식
+    val extended = elements + elements
+    val prefixSum = IntArray(extended.size + 1)
+
+    for (i in 1..extended.size) {
+        prefixSum[i] = prefixSum[i-1] + extended[i-1]
+    }
+
+    for (len in 1..size) {
+        for (start in 0 until size) {
+            val sum = prefixSum[start+len] - prefixSum[start]
+            set.add(sum)
+        }
+    }
+
+    //내가 한 방식
     for (i in 1..size) {
         for (j in 0 until size) {
             var sum = 0
-            for (k in j until j+i) {
+            for (k in j until j + i) {
                 sum += elements[k % size]
             }
             set.add(sum)
@@ -25,5 +41,5 @@ fun solution131701(elements: IntArray): Int {
 
 
 fun main() {
-    println(solution131701(intArrayOf(7,9,1,1,4)))
+    println(solution131701(intArrayOf(7, 9, 1, 1, 4)))
 }
