@@ -15,12 +15,11 @@ fun solution42883(number: String, k: Int): String {
     var count = k
 
     for (c in number) {
-        val curr = c
-        while (list.isNotEmpty() && list.last() < curr && count > 0) {
+        while (list.isNotEmpty() && list.last() < c && count > 0) {
             list.removeAt(list.size -1)
             count--
         }
-        list.add(curr)
+        list.add(c)
     }
 
     return list.take(list.size - count).joinToString("")
