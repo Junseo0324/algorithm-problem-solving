@@ -32,7 +32,7 @@ fun main() {
             for (next in graph[curr]) {
                 if (!visitedDfs[next]) {
                     visitedBfs[next] = true
-                    queue.add(next)
+                    queue.addLast(next)
                 }
             }
         }
