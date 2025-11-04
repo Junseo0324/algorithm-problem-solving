@@ -1,23 +1,30 @@
 package BOJ.greedy
 
+// https://www.acmicpc.net/problem/11047
+
 /**
  * 큰 것부터 나누면 된다.
  */
+
 fun main() {
-    var (n, k) = readln().split(" ").map { it.toInt() }
-    var list = mutableListOf<Int>()
+    val (n, k) = readln().split(" ").map { it.toInt() }
+    var money = k
+    var answer = 0
+    var array = mutableListOf<Int>()
+
     repeat(n) {
-        list += readln().toInt()
+        array.add(readln().toInt())
     }
 
-    var count = 0
-    list.sortDescending()
+    array = array.sortedDescending().toMutableList()
 
-    for (i in list.indices) {
-        if (k >= list[i]) {
-            count += (k / list[i])
-            k %= list[i];
+    array.forEach {
+        if (it <= money) {
+            val count = money / it
+            money -= (count * it)
+            answer += count
         }
     }
-    println(count)
+
+    println(answer)
 }
