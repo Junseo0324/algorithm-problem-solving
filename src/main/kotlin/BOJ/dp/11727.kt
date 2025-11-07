@@ -8,12 +8,21 @@ package BOJ.dp
 fun main() {
     val n = readln().toInt()
     val dp = IntArray(n + 1)
+    if (n == 1) {
+        println(1)
+        return
+    }
+    if (n == 2) {
+        println(3)
+        return
+    }
     dp[0] = 0
     dp[1] = 1
     dp[2] = 3
     for (i in 3..n) {
         dp[i] = (dp[i - 1] + dp[i - 2] * 2) % 10007
     }
+
 
     println(dp[n])
 }
