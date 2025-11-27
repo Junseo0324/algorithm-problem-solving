@@ -7,27 +7,24 @@ package BOJ.implementation
 // Scalene 다 다를때
 // Invalid
 fun main() {
-    val list = mutableListOf<String>()
     while (true) {
-        val input = readln().split(" ").sorted().map { it.toInt() }
+        var input = readln().split(" ").sorted().map { it.toInt() }
         if (input.all { it == 0 }) break
+
+        input = input.sorted()
+
         val a = input[0]
         val b = input[1]
         val c = input[2]
 
-        if (c >= a+b) {
-            list.add("Invalid")
-            continue
+        if (c >= a + b) {
+            println("Invalid")
+        } else if (a == b && b == c) {
+            println("Equilateral")
+        } else if (a == b || b == c) {
+            println("Isosceles")
+        } else {
+            println("Scalene")
         }
-        if (c == a && c == b) {
-            list.add("Equilateral")
-            continue
-        }
-        var count = 0
-        for (i in 0 until 3) {
-            if (input[0] == input[1]) count++
-        }
-
     }
-
 }
