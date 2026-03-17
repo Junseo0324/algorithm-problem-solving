@@ -8,7 +8,7 @@ fun main() {
     val n = readln().toInt()
     var i = n
     while (true) {
-        if (isPrime(i) && isPalindrome(i)) {
+        if (isPalindrome(i) && isPrime(i)) {
             println(i)
             break
         }
