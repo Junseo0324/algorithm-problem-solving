@@ -17,7 +17,6 @@ fun main() {
 
         for (next in graph[node]) {
             if (!visited[next]) {
-                visited[next] = true
                 dfs(next)
             }
         }
