@@ -1,4 +1,4 @@
-package programmers.greedy
+package programmers.practice.greedy
 
 fun main() {
     println(

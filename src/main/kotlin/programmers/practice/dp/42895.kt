@@ -1,4 +1,4 @@
-package programmers.dp
+package programmers.practice.dp
 
 
 fun main() {
